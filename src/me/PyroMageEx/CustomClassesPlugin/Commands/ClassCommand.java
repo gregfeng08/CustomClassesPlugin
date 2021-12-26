@@ -105,7 +105,6 @@ public class ClassCommand implements CommandExecutor{
 			case "witch":
 				p.getInventory().addItem(ItemManager.witchHat());
 				p.getInventory().addItem(ItemManager.witchCauldron());
-				p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000, 1));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000, 1));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 100000, 5));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100000, 1));

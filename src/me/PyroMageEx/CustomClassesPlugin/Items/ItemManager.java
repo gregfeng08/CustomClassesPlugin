@@ -305,8 +305,8 @@ public class ItemManager {
 		switch(x) {
 		//Escape Potion
 		case 1:
-			meta.addCustomEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20*20, 2), true);
-			meta.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 10*20, 2), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 10*20, 2), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 5*20, 2), true);
 			break;
 		//Offensive Potion
 		case 2:
@@ -325,8 +325,7 @@ public class ItemManager {
 			break;
 		//Ghosty Potion
 		case 5:
-			meta.addCustomEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 120*20, 5), true);
-			meta.addCustomEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120*20, 1), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 60*20, 5), true);
 			break;
 		}
 		customItem.setItemMeta(meta);
