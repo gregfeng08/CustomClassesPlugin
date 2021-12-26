@@ -254,4 +254,38 @@ public class ItemManager {
 		customItem.setItemMeta(meta);
 		return customItem;
 	}
+	// Witch Items
+	public static ItemStack witchHat() {
+		ItemStack customItem = new ItemStack(Material.LEATHER_HELMET, 1);
+		LeatherArmorMeta leatherMeta = (LeatherArmorMeta) customItem.getItemMeta();
+		List<String> lore = new ArrayList<String>();
+
+		lore.add(ChatColor.BLACK + "Fancy a potion?");
+		leatherMeta.setLore(lore);
+		leatherMeta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Witch Essence");
+		leatherMeta.addEnchant(Enchantment.THORNS, 2, true);
+		leatherMeta.addEnchant(Enchantment.PROTECTION_FIRE, 10, true);
+		leatherMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
+		leatherMeta.setUnbreakable(true);
+		leatherMeta.setColor(Color.BLACK);
+
+		customItem.setItemMeta(leatherMeta);
+		return customItem;
+	}
+	public static ItemStack witchCauldron() {
+		ItemStack customItem = new ItemStack(Material.CAULDRON, 1);
+		ItemMeta meta = customItem.getItemMeta();
+		List<String> lore = new ArrayList<String>();
+
+		lore.add(ChatColor.BLACK + "It hits like a truck..");
+		meta.setLore(lore);
+		meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Witch's Brewing Pot");
+		meta.addEnchant(Enchantment.DAMAGE_ALL, 3, true);
+		meta.addEnchant(Enchantment.FIRE_ASPECT, 1, true);
+		meta.setUnbreakable(true);
+
+		customItem.setItemMeta(meta);
+		return customItem;
+	}
+	
 }

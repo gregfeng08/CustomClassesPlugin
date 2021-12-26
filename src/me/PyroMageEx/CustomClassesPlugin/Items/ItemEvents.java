@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerExpChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -30,5 +31,14 @@ public class ItemEvents implements Listener{
 			p.launchProjectile(EnderPearl.class);
 			e.setCancelled(true);
 		}
+	}
+	//For Witch Potion Drops
+	@EventHandler
+	public void onExpChange(PlayerExpChangeEvent e) {
+		Player p = e.getPlayer();
+		ItemStack item = p.getInventory().getHelmet();
+		ItemMeta meta = item.getItemMeta();
+		String name = meta.getDisplayName();
+		p.sendMessage(String.valueOf(e.getAmount()));
 	}
 }
