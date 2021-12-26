@@ -7,4 +7,4 @@ description: Custom Classes :D
 commands:
   class:
     aliases: [c]
-    description: Choose a class [Blaze/Zombie/Skeleton/Enderman/Wither_Skeleton/Silverfish/Dolphin/Witch/reset]
+    description: Choose a class [Blaze/Zombie/Skeleton/Enderman/Wither_Skeleton/Silverfish/Dolphin/Witch/Villager/reset]

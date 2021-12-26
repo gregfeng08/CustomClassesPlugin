@@ -149,6 +149,7 @@ public class ItemManager {
 		lore.add(ChatColor.DARK_GRAY + "The most fearsome of gladiators");
 		leatherMeta.setLore(lore);
 		leatherMeta.setDisplayName(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Wither Skeleton Essence");
+		leatherMeta.addEnchant(Enchantment.SOUL_SPEED, 2, true);
 		leatherMeta.addEnchant(Enchantment.BINDING_CURSE, 1, true);
 		leatherMeta.setUnbreakable(true);
 		leatherMeta.setColor(Color.BLACK);
@@ -331,5 +332,115 @@ public class ItemManager {
 		customItem.setItemMeta(meta);
 		return customItem;
 	}
+	//Villager Items
+	public static ItemStack villagerHat() {
+		ItemStack customItem = new ItemStack(Material.LEATHER_HELMET, 1);
+		LeatherArmorMeta leatherMeta = (LeatherArmorMeta) customItem.getItemMeta();
+		List<String> lore = new ArrayList<String>();
+
+		lore.add(ChatColor.YELLOW + "Hrrrm?");
+		leatherMeta.setLore(lore);
+		leatherMeta.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "Villager Essence");
+		leatherMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
+		leatherMeta.addEnchant(Enchantment.BINDING_CURSE, 1, true);
+		leatherMeta.setUnbreakable(true);
+		leatherMeta.setColor(Color.YELLOW);
+
+		customItem.setItemMeta(leatherMeta);
+		return customItem;
+	}
+	//
+	public static ItemStack villagerItems(String type, int rng) {
+		ItemStack item = null;
+		if(type.equals("bad")) {
+			switch(rng) {
+			case 1:
+				item = new ItemStack(Material.ROTTEN_FLESH, 64);
+				break;
+			case 2:
+				item = new ItemStack(Material.WHEAT_SEEDS, 32);
+				break;
+			case 3:
+				item = new ItemStack(Material.GLASS_PANE, 64);
+				break;
+			case 4:
+				item = new ItemStack(Material.COAL, 40);
+				break;
+			case 5:
+				item = new ItemStack(Material.SUGAR, 32);
+				break;
+			case 6:
+				item = new ItemStack(Material.LEATHER, 40);
+				break;
+			case 7:
+				item = new ItemStack(Material.DEEPSLATE, 64);
+				break;
+			case 8:
+				item = new ItemStack(Material.GREEN_WOOL, 64);
+				break;
+			case 9:
+				item = new ItemStack(Material.BLACK_BANNER, 1);
+				break;
+			}
+		}
+		else if(type.equals("good")) {
+			switch(rng) {
+			case 1:
+				item = new ItemStack(Material.ENDER_PEARL, 8);
+				break;
+			case 2:
+				item = new ItemStack(Material.DIAMOND_AXE, 1);
+				break;
+			case 3:
+				item = new ItemStack(Material.IRON_PICKAXE, 1);
+				break;
+			case 4:
+				item = new ItemStack(Material.NETHERITE_INGOT, 1);
+				break;
+			case 5:
+				item = new ItemStack(Material.COOKED_BEEF, 32);
+				break;
+			case 6:
+				item = new ItemStack(Material.OAK_LOG, 40);
+				break;
+			case 7:
+				item = new ItemStack(Material.GOLDEN_APPLE, 4);
+				break;
+			case 8:
+				item = new ItemStack(Material.IRON_CHESTPLATE, 1);
+				break;
+			case 9:
+				item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
+				break;
+			}
+		}
+		else if(type.equals("op")) {
+			switch(rng) {
+			case 1:
+				item = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 1);
+				break;
+			case 2:
+				item = new ItemStack(Material.DIAMOND_BOOTS, 1);
+				break;
+			case 3:
+				item = new ItemStack(Material.IRON_BLOCK, 5);
+				break;
+			case 4:
+				item = new ItemStack(Material.BARRIER, 5);
+				break;
+			case 5:
+				item = new ItemStack(Material.GOLD_BLOCK, 5);
+				break;
+			case 6:
+				item = new ItemStack(Material.CREEPER_SPAWN_EGG, 5);
+				break;
+			case 7:
+				item = new ItemStack(Material.DIAMOND, 10);
+				break;
+			}
+		}
+		return item;
+	}
+	
 	
 }

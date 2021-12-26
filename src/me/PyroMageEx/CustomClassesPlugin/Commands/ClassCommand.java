@@ -111,6 +111,25 @@ public class ClassCommand implements CommandExecutor{
 				p.getInventory().setItem(8, new ItemStack(Material.COMPASS, 1));
 				Bukkit.broadcastMessage(ChatColor.UNDERLINE+""+ChatColor.BOLD+p.getName()+" has selected class: "+playerClass);
 				break;
+			case "villager":
+				p.getInventory().addItem(ItemManager.villagerHat());
+				p.addPotionEffect(new PotionEffect(PotionEffectType.HERO_OF_THE_VILLAGE, 100000, 1));
+				int bad = 5,good = 3,op = 1;
+				for(int i=0;i<bad;i++) {
+					int rng = (int) (Math.random()*(9-1+1)+1);
+					p.getInventory().addItem(ItemManager.villagerItems("bad", rng));
+				}
+				for(int i=0;i<good;i++) {
+					int rng = (int) (Math.random()*(9-1+1)+1);
+					p.getInventory().addItem(ItemManager.villagerItems("good", rng));
+				}
+				for(int i=0;i<op;i++) {
+					int rng = (int) (Math.random()*(7-1+1)+1);
+					p.getInventory().addItem(ItemManager.villagerItems("op", rng));
+				}
+				p.getInventory().setItem(8, new ItemStack(Material.COMPASS, 1));
+				Bukkit.broadcastMessage(ChatColor.UNDERLINE+""+ChatColor.BOLD+p.getName()+" has selected class: "+playerClass);
+				break;
 			case "reset":
 				p.sendMessage("Your class has been reset.");
 				break;
