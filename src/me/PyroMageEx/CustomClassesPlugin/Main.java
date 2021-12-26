@@ -12,6 +12,7 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.PyroMageEx.CustomClassesPlugin.Commands.ClassCommand;
+import me.PyroMageEx.CustomClassesPlugin.Items.ItemEvents;
 import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin{
@@ -19,6 +20,7 @@ public class Main extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		new ClassCommand(this);
+		new ItemEvents(this);
 	}
 	@Override
 	public void onDisable() {

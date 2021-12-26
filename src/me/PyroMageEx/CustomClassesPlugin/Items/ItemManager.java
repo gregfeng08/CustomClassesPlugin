@@ -1,4 +1,4 @@
-package me.PyroMageEx.Items;
+package me.PyroMageEx.CustomClassesPlugin.Items;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +85,7 @@ public class ItemManager {
 	}
 
 	public static ItemStack enderPearl() {
-		ItemStack customItem = new ItemStack(Material.ENDER_PEARL, 16);
+		ItemStack customItem = new ItemStack(Material.ENDER_PEARL, 1);
 		ItemMeta meta = customItem.getItemMeta();
 		List<String> lore = new ArrayList<String>();
 

@@ -10,7 +10,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import java.util.*;
 import me.PyroMageEx.CustomClassesPlugin.Main;
-import me.PyroMageEx.Items.ItemManager;
+import me.PyroMageEx.CustomClassesPlugin.Items.ItemManager;
 import net.md_5.bungee.api.ChatColor;
 
 public class ClassCommand implements CommandExecutor{
