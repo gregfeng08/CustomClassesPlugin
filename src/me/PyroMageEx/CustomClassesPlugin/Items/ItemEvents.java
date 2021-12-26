@@ -1,6 +1,7 @@
 package me.PyroMageEx.CustomClassesPlugin.Items;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,6 +9,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerExpChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -65,4 +68,15 @@ public class ItemEvents implements Listener{
 			}
 		}
 	}
+	//Villager move
+	/*@EventHandler
+	public void villagerMove(PlayerToggleSneakEvent e) {
+		Player p = e.getPlayer();
+		ItemStack item = p.getInventory().getHelmet();
+		ItemMeta meta = item.getItemMeta();
+		String name = meta.getDisplayName();
+		if(name.equals(ChatColor.YELLOW + "" + ChatColor.BOLD + "Villager Essence")) {
+			p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_AMBIENT, 10, 5);
+		}
+	}*/
 }

@@ -349,7 +349,7 @@ public class ItemManager {
 		customItem.setItemMeta(leatherMeta);
 		return customItem;
 	}
-	//
+	//Randomized villager items
 	public static ItemStack villagerItems(String type, int rng) {
 		ItemStack item = null;
 		if(type.equals("bad")) {
@@ -441,6 +441,49 @@ public class ItemManager {
 		}
 		return item;
 	}
-	
+	//Phantom items
+	public static ItemStack phantomHat() {
+		ItemStack customItem = new ItemStack(Material.LEATHER_HELMET, 1);
+		LeatherArmorMeta leatherMeta = (LeatherArmorMeta) customItem.getItemMeta();
+		List<String> lore = new ArrayList<String>();
+
+		lore.add(ChatColor.LIGHT_PURPLE + "Skreeee..");
+		leatherMeta.setLore(lore);
+		leatherMeta.setDisplayName(ChatColor.DARK_BLUE + "" + ChatColor.BOLD + "Phantom Essence");
+		leatherMeta.addEnchant(Enchantment.BINDING_CURSE, 1, true);
+		leatherMeta.setUnbreakable(true);
+		leatherMeta.setColor(Color.NAVY);
+
+		customItem.setItemMeta(leatherMeta);
+		return customItem;
+	}
+	public static ItemStack phantomWings() {
+		ItemStack customItem = new ItemStack(Material.ELYTRA, 1);
+		ItemMeta meta = customItem.getItemMeta();
+		List<String> lore = new ArrayList<String>();
+
+		lore.add(ChatColor.LIGHT_PURPLE + "A predator in the night..");
+		meta.setLore(lore);
+		meta.setDisplayName(ChatColor.DARK_BLUE + "" + ChatColor.BOLD + "Phantom Wings");
+		meta.addEnchant(Enchantment.BINDING_CURSE, 1, true);
+		meta.setUnbreakable(true);
+
+		customItem.setItemMeta(meta);
+		return customItem;
+	}
+	public static ItemStack phantomFirework() {
+		ItemStack customItem = new ItemStack(Material.FIREWORK_ROCKET, 16);
+		ItemMeta meta = customItem.getItemMeta();
+		List<String> lore = new ArrayList<String>();
+
+		lore.add(ChatColor.LIGHT_PURPLE + "Bang!");
+		lore.add(ChatColor.RED+"Limited Amount, Use Wisely!");
+		meta.setLore(lore);
+		meta.setDisplayName(ChatColor.DARK_BLUE + "" + ChatColor.BOLD + "Boost!");
+		meta.setUnbreakable(true);
+
+		customItem.setItemMeta(meta);
+		return customItem;
+	}
 	
 }

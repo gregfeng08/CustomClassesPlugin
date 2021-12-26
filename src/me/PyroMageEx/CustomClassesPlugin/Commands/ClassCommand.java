@@ -127,6 +127,14 @@ public class ClassCommand implements CommandExecutor{
 					int rng = (int) (Math.random()*(7-1+1)+1);
 					p.getInventory().addItem(ItemManager.villagerItems("op", rng));
 				}
+				p.getInventory().addItem(new ItemStack(Material.COMPASS, 1));
+				Bukkit.broadcastMessage(ChatColor.UNDERLINE+""+ChatColor.BOLD+p.getName()+" has selected class: "+playerClass);
+				break;
+			case "phantom":
+				p.getInventory().addItem(ItemManager.phantomHat());
+				p.getInventory().addItem(ItemManager.phantomWings());
+				p.getInventory().addItem(ItemManager.phantomFirework());
+				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 100000, 2));
 				p.getInventory().setItem(8, new ItemStack(Material.COMPASS, 1));
 				Bukkit.broadcastMessage(ChatColor.UNDERLINE+""+ChatColor.BOLD+p.getName()+" has selected class: "+playerClass);
 				break;
