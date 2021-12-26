@@ -1,0 +1,10 @@
+name: ClassCommand
+version: 1.0
+author: PyroMageEx
+main: me.PyroMageEx.CustomClassesPlugin.Main
+description: Custom Classes :D
+
+commands:
+  class:
+    aliases: [c]
+    description: Choose a class [Blaze/Zombie/Skeleton/Enderman/Wither_Skeleton/Silverfish/Dolphin/reset]
