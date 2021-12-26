@@ -39,6 +39,30 @@ public class ItemEvents implements Listener{
 		ItemStack item = p.getInventory().getHelmet();
 		ItemMeta meta = item.getItemMeta();
 		String name = meta.getDisplayName();
-		p.sendMessage(String.valueOf(e.getAmount()));
+		//0.25 of getting a random 2 potions
+		if(name.equals(ChatColor.GOLD + "" + ChatColor.BOLD + "Witch Essence")) {
+			int rand1 = (int) (Math.random()*(4-1+1)+1);
+			if(rand1==1) {
+				p.sendMessage("You find a pair of mysterious potion in the bottom of your bag...");
+				int rand2 = (int) (Math.random()*(5-1+1)+1);
+				switch(rand2) {
+				case 1:
+					p.getInventory().addItem(ItemManager.potions(1));
+					break;
+				case 2:
+					p.getInventory().addItem(ItemManager.potions(2));
+					break;
+				case 3:
+					p.getInventory().addItem(ItemManager.potions(3));
+					break;
+				case 4:
+					p.getInventory().addItem(ItemManager.potions(4));
+					break;
+				case 5:
+					p.getInventory().addItem(ItemManager.potions(5));
+					break;
+				}
+			}
+		}
 	}
 }

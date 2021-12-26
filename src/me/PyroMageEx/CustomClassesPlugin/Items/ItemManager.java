@@ -6,9 +6,13 @@ import java.util.List;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -284,6 +288,47 @@ public class ItemManager {
 		meta.addEnchant(Enchantment.FIRE_ASPECT, 1, true);
 		meta.setUnbreakable(true);
 
+		customItem.setItemMeta(meta);
+		return customItem;
+	}
+	public static ItemStack potions(int x) {
+		ItemStack customItem = new ItemStack(Material.SPLASH_POTION, 2);
+		PotionMeta meta = (PotionMeta) customItem.getItemMeta();
+		List<String> lore = new ArrayList<String>();
+		
+		lore.add(ChatColor.DARK_PURPLE + "Bon Appetit");
+		meta.setLore(lore);
+		meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Mystery Potion");
+		meta.setColor(Color.TEAL);
+		meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+		//PotionEffect: PotionEffectType, duration, amplifier
+		switch(x) {
+		//Escape Potion
+		case 1:
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20*20, 2), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 10*20, 2), true);
+			break;
+		//Offensive Potion
+		case 2:
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20*20, 2), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20*20, 3), true);
+			break;
+		//Aggressive Potion
+		case 3:
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 15*20, 2), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.REGENERATION, 15*20, 2), true);
+			break;
+		//Loot table/passive Potion
+		case 4:
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.LUCK, 120*20, 5), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.SATURATION, 120*20, 2), true);
+			break;
+		//Ghosty Potion
+		case 5:
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 120*20, 5), true);
+			meta.addCustomEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120*20, 1), true);
+			break;
+		}
 		customItem.setItemMeta(meta);
 		return customItem;
 	}
